@@ -1,0 +1,53 @@
+*{
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+menu > li {
+	display: inline;
+	list-style: none;
+	margin: 0.5rem;
+}
+
+@media screen{
+	html {
+		color-scheme: light dark;
+		height: 90vh;
+	}
+
+	body {
+		display: grid;
+		grid-template-areas:
+		"head head"
+		"main  output";
+		grid-template-rows: fit-content(1rem) auto;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		height: 100%;
+	}
+
+	header {
+		grid-area: head;
+		background: rgb(117, 117, 117);
+		color-scheme: light;
+		color: white;
+	}
+
+	pre {
+		border: 1px solid;
+		height: 100%;
+		padding: 1rem;
+		overflow: scroll;
+	}
+
+	#editor {
+		grid-area: main;
+	}
+
+	#output {
+		grid-area: output;
+	}
+}
